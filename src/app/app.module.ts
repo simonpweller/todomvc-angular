@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { InfoFooterComponent } from './info-footer/info-footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { InfoFooterComponent } from './info-footer/info-footer.component';
     FooterComponent,
     MainComponent,
     InfoFooterComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule],
   providers: [],

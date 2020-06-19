@@ -1,8 +1,5 @@
 <section class="todoapp">
-  <header class="header">
-    <h1>todos</h1>
-    <input class="new-todo" placeholder="What needs to be done?" autofocus />
-  </header>
+  <app-header></app-header>
   <app-main *ngIf="todos.length > 0"></app-main>
   <app-footer *ngIf="todos.length > 0"></app-footer>
 </section>
