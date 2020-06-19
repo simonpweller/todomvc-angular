@@ -4,9 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
+import { InfoFooterComponent } from './info-footer/info-footer.component';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, MainComponent],
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    MainComponent,
+    InfoFooterComponent,
+  ],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
