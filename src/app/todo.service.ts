@@ -24,16 +24,16 @@ export class TodoService {
   }
 
   addTodo(todo: Todo) {
-    this.todos.push(todo);
+    this.todos = [...this.todos, todo];
   }
 
   toggle(id: string) {
-    this.todos.forEach((todo) => {
-      if (todo.id === id) todo.completed = !todo.completed;
-    });
+    this.todos = this.todos.map((todo) =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    );
   }
 
   toggleAll(completed: boolean): void {
-    this.todos.forEach((todo) => (todo.completed = completed));
+    this.todos = this.todos.map((todo) => ({ ...todo, completed }));
   }
 }
