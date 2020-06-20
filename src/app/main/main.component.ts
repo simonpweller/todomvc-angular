@@ -9,8 +9,8 @@ import { Todo } from '../Todo';
 export class MainComponent {
   constructor(private todoService: TodoService) {}
 
-  getTodos(): Todo[] {
-    return this.todoService.getTodos();
+  get todos(): Todo[] {
+    return this.todoService.todos;
   }
 
   get allCompleted(): boolean {

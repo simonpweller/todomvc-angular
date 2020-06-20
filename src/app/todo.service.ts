@@ -7,10 +7,6 @@ import { Todo } from './Todo';
 export class TodoService {
   todos: Todo[] = [];
 
-  getTodos(): Todo[] {
-    return this.todos;
-  }
-
   get hasTodos(): boolean {
     return this.todos.length > 0;
   }
