@@ -6,5 +6,9 @@ import { TodoService } from './todo.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  constructor(public todoService: TodoService) {}
+  constructor(private todoService: TodoService) {}
+
+  get hasTodos(): boolean {
+    return this.todoService.hasTodos;
+  }
 }

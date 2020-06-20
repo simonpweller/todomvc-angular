@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../../todo.service';
 
 @Component({
@@ -7,4 +7,8 @@ import { TodoService } from '../../todo.service';
 })
 export class TodoCountComponent {
   constructor(public todoService: TodoService) {}
+
+  get activeTodoCount(): number {
+    return this.todoService.activeTodoCount;
+  }
 }

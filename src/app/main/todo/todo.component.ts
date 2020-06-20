@@ -9,5 +9,9 @@ import { TodoService } from '../../todo.service';
 export class TodoComponent {
   @Input() todo: Todo;
 
-  constructor(public todoService: TodoService) {}
+  constructor(private todoService: TodoService) {}
+
+  toggle(id: string) {
+    this.todoService.toggle(id);
+  }
 }
