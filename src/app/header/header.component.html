@@ -1,4 +1,11 @@
 <header class="header">
   <h1>todos</h1>
-  <input #input class="new-todo" placeholder="What needs to be done?" />
+  <input
+    #input
+    class="new-todo"
+    [(ngModel)]="newTodoText"
+    placeholder="What needs to be done?"
+    (keyup.enter)="submit()"
+    (blur)="submit()"
+  />
 </header>

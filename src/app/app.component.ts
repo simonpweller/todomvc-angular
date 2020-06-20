@@ -7,4 +7,8 @@ import { Todo } from './Todo';
 })
 export class AppComponent {
   todos: Todo[] = [];
+
+  onNewTodo(todo: Todo) {
+    this.todos.push(todo);
+  }
 }
