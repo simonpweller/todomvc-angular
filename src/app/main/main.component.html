@@ -1,5 +1,11 @@
 <section class="main">
-  <input id="toggle-all" class="toggle-all" type="checkbox" />
+  <input
+    id="toggle-all"
+    class="toggle-all"
+    type="checkbox"
+    (change)="toggleAll()"
+    [checked]="allCompleted"
+  />
   <label for="toggle-all">Mark all as complete</label>
   <ul class="todo-list">
     <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>

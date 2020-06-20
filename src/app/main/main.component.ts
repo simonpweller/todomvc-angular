@@ -7,4 +7,15 @@ import { Todo } from '../Todo';
 })
 export class MainComponent {
   @Input() todos: Todo[];
+
+  get allCompleted() {
+    return this.todos.every((todo) => todo.completed);
+  }
+
+  toggleAll(): void {
+    this.todos = this.todos.map((todo) => ({
+      ...todo,
+      completed: !this.allCompleted,
+    }));
+  }
 }

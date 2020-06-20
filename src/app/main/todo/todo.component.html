@@ -1,6 +1,11 @@
-<li>
+<li [class.completed]="todo.completed">
   <div class="view">
-    <input class="toggle" type="checkbox" />
+    <input
+      class="toggle"
+      type="checkbox"
+      [checked]="todo.completed"
+      (change)="todo.completed = !todo.completed"
+    />
     <label>{{ todo.text }}</label>
     <button class="destroy"></button>
   </div>
