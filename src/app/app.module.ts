@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './main/todo/todo.component';
 import { TodoCountComponent } from './footer/todo-count/todo-count.component';
+import { ClearCompletedComponent } from './footer/clear-completed/clear-completed.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TodoCountComponent } from './footer/todo-count/todo-count.component';
     HeaderComponent,
     TodoComponent,
     TodoCountComponent,
+    ClearCompletedComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

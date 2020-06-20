@@ -11,7 +11,11 @@ export class TodoComponent {
 
   constructor(private todoService: TodoService) {}
 
-  toggle(id: string) {
+  toggle(id: string): void {
     this.todoService.toggle(id);
+  }
+
+  deleteTodo(id: string): void {
+    this.todoService.deleteTodo(id);
   }
 }

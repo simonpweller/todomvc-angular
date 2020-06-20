@@ -7,7 +7,7 @@
       (change)="toggle(todo.id)"
     />
     <label>{{ todo.text }}</label>
-    <button class="destroy"></button>
+    <button class="destroy" (click)="deleteTodo(todo.id)"></button>
   </div>
   <input class="edit" value="{{ todo.text }}" />
 </li>
