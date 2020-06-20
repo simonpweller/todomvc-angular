@@ -6,6 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Todo } from '../Todo';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,8 @@ export class HeaderComponent implements AfterViewInit {
   @Output() newTodo = new EventEmitter<Todo>();
   newTodoText: string = '';
 
+  constructor(private todoService: TodoService) {}
+
   ngAfterViewInit() {
     this.input.nativeElement.focus();
   }
@@ -23,7 +26,11 @@ export class HeaderComponent implements AfterViewInit {
   submit() {
     const trimmedTodoText = this.newTodoText.trim();
     if (trimmedTodoText.length) {
-      this.newTodo.emit({ id: '1', text: trimmedTodoText, completed: false });
+      this.todoService.addTodo({
+        id: '1',
+        text: trimmedTodoText,
+        completed: false,
+      });
       this.newTodoText = '';
     }
   }

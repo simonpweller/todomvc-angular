@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
-import { Todo } from './Todo';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  todos: Todo[] = [];
-
-  onNewTodo(todo: Todo) {
-    this.todos.push(todo);
-  }
+  constructor(public todoService: TodoService) {}
 }
