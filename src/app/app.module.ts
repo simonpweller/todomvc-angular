@@ -8,6 +8,7 @@ import { InfoFooterComponent } from './info-footer/info-footer.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './main/todo/todo.component';
+import { TodoCountComponent } from './footer/todo-count/todo-count.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TodoComponent } from './main/todo/todo.component';
     InfoFooterComponent,
     HeaderComponent,
     TodoComponent,
+    TodoCountComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
