@@ -12,10 +12,7 @@ export class MainComponent {
     return this.todos.every((todo) => todo.completed);
   }
 
-  toggleAll(): void {
-    this.todos = this.todos.map((todo) => ({
-      ...todo,
-      completed: !this.allCompleted,
-    }));
+  toggleAll(completed: boolean): void {
+    this.todos.forEach((todo) => (todo.completed = completed));
   }
 }

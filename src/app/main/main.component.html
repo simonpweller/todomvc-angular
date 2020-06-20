@@ -3,7 +3,7 @@
     id="toggle-all"
     class="toggle-all"
     type="checkbox"
-    (change)="toggleAll()"
+    (change)="toggleAll(!allCompleted)"
     [checked]="allCompleted"
   />
   <label for="toggle-all">Mark all as complete</label>
