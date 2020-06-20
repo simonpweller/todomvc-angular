@@ -13,6 +13,10 @@ export class MainComponent {
     return this.todoService.todos;
   }
 
+  get hasTodos(): boolean {
+    return this.todoService.hasTodos;
+  }
+
   get allCompleted(): boolean {
     return this.todoService.allCompleted;
   }
