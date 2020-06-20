@@ -4,7 +4,7 @@
       class="toggle"
       type="checkbox"
       [checked]="todo.completed"
-      (change)="todo.completed = !todo.completed"
+      (change)="todoService.toggle(todo.id)"
     />
     <label>{{ todo.text }}</label>
     <button class="destroy"></button>

@@ -1,10 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { Todo } from '../Todo';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
 })
-export class FooterComponent {
-  @Input() todos: Todo[];
-}
+export class FooterComponent {}

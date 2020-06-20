@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid';
 import {
   AfterViewInit,
   Component,
@@ -27,7 +28,7 @@ export class HeaderComponent implements AfterViewInit {
     const trimmedTodoText = this.newTodoText.trim();
     if (trimmedTodoText.length) {
       this.todoService.addTodo({
-        id: '1',
+        id: uuid(),
         text: trimmedTodoText,
         completed: false,
       });

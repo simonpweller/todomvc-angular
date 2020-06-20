@@ -1,12 +1,6 @@
 <section class="todoapp">
   <app-header></app-header>
-  <app-main
-    [todos]="todoService.getTodos()"
-    *ngIf="todoService.getTodos().length > 0"
-  ></app-main>
-  <app-footer
-    [todos]="todoService.getTodos()"
-    *ngIf="todoService.getTodos().length > 0"
-  ></app-footer>
+  <app-main *ngIf="todoService.hasTodos"></app-main>
+  <app-footer *ngIf="todoService.hasTodos"></app-footer>
 </section>
 <app-info-footer></app-info-footer>

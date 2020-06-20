@@ -3,11 +3,14 @@
     id="toggle-all"
     class="toggle-all"
     type="checkbox"
-    (change)="toggleAll(!allCompleted)"
-    [checked]="allCompleted"
+    (change)="todoService.toggleAll(!todoService.allCompleted)"
+    [checked]="todoService.allCompleted"
   />
   <label for="toggle-all">Mark all as complete</label>
   <ul class="todo-list">
-    <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+    <app-todo
+      *ngFor="let todo of todoService.getTodos()"
+      [todo]="todo"
+    ></app-todo>
   </ul>
 </section>
