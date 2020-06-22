@@ -37,6 +37,12 @@ export class TodoService {
     this.todos = this.todos.map((todo) => ({ ...todo, completed }));
   }
 
+  updateTodoText(id, newText) {
+    this.todos = this.todos.map((todo) =>
+      todo.id === id ? { ...todo, text: newText } : todo
+    );
+  }
+
   deleteTodo(id: string): void {
     this.todos = this.todos.filter((todo) => todo.id !== id);
   }

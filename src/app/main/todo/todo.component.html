@@ -1,4 +1,4 @@
-<li [class.completed]="todo.completed">
+<li [class.completed]="todo.completed" [class.editing]="editing">
   <div class="view">
     <input
       class="toggle"
@@ -6,8 +6,15 @@
       [checked]="todo.completed"
       (change)="toggle(todo.id)"
     />
-    <label>{{ todo.text }}</label>
+    <label (dblclick)="startEditing()">{{ todo.text }}</label>
     <button class="destroy" (click)="deleteTodo(todo.id)"></button>
   </div>
-  <input class="edit" value="{{ todo.text }}" />
+  <input
+    class="edit"
+    #input
+    [(ngModel)]="editedText"
+    (blur)="finishEditing()"
+    (keyup.enter)="finishEditing()"
+    (keyup.escape)="cancelEditing()"
+  />
 </li>
