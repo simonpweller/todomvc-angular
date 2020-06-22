@@ -5,7 +5,12 @@ import { Todo } from './Todo';
   providedIn: 'root',
 })
 export class TodoService {
-  todos: Todo[] = [];
+  todos: Todo[] = JSON.parse(localStorage.getItem('todos')) || [];
+
+  setAndStore(todos) {
+    this.todos = todos;
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
 
   get hasTodos(): boolean {
     return this.todos.length > 0;
@@ -24,30 +29,34 @@ export class TodoService {
   }
 
   addTodo(todo: Todo): void {
-    this.todos = [...this.todos, todo];
+    this.setAndStore([...this.todos, todo]);
   }
 
   toggle(id: string): void {
-    this.todos = this.todos.map((todo) =>
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    this.setAndStore(
+      this.todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
     );
   }
 
   toggleAll(completed: boolean): void {
-    this.todos = this.todos.map((todo) => ({ ...todo, completed }));
+    this.setAndStore(this.todos.map((todo) => ({ ...todo, completed })));
   }
 
   updateTodoText(id, newText) {
-    this.todos = this.todos.map((todo) =>
-      todo.id === id ? { ...todo, text: newText } : todo
+    this.setAndStore(
+      this.todos.map((todo) =>
+        todo.id === id ? { ...todo, text: newText } : todo
+      )
     );
   }
 
   deleteTodo(id: string): void {
-    this.todos = this.todos.filter((todo) => todo.id !== id);
+    this.setAndStore(this.todos.filter((todo) => todo.id !== id));
   }
 
   deleteCompleted(): void {
-    this.todos = this.todos.filter((todo) => !todo.completed);
+    this.setAndStore(this.todos.filter((todo) => !todo.completed));
   }
 }
