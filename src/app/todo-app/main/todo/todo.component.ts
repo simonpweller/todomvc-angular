@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { Todo } from '../../Todo';
-import { TodoService } from '../../todo.service';
+import { Todo } from '../../../Todo';
+import { TodoService } from '../../../todo.service';
 
 @Component({
   selector: 'app-todo',

@@ -1,0 +1,13 @@
+<ul class="filters">
+  <li>
+    <a [class.selected]="!filter" routerLink="/">All</a>
+  </li>
+  <li>
+    <a [class.selected]="filter === 'active'" routerLink="/active">Active</a>
+  </li>
+  <li>
+    <a [class.selected]="filter === 'completed'" routerLink="/completed"
+      >Completed</a
+    >
+  </li>
+</ul>
